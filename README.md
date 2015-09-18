@@ -5,7 +5,7 @@ I don’t like npm. npm is crap. it is a shitload of crap. this is a document sp
 
 ---
 
-##How it works!!
+## How it works!!
 
 installation (of packages):
 
@@ -15,7 +15,7 @@ specification of the url parameter is described below. the global dungeon config
 
 ---
 
-##URL specification:
+## URL specification:
 
 the url can be a web protocol based url, file system based one, or git. it should be resolved to:
 
@@ -35,7 +35,7 @@ due to this, there is no need for dungeon to have any registry. like npm or jspm
 
 ---
 
-##metadata:
+## metadata:
 
 dungeon is strictly a package manager only. no build or testing or whatever. however, it provides hooks for building and testing. metadata provides those hook information.
 
@@ -77,7 +77,7 @@ we can also use yaml, which can greatly solve a few of these problems. but it wi
 
 ---
 
-##hooks:
+## hooks:
 
 hooking the package manager with build tools has so far been a terrible idea for most package managers. it doesn’t follow the unix principle of making small and focused tools. a manager should manage packages, not do shit with the code.
 
@@ -95,7 +95,7 @@ A complete list of future reserved rules will be written somewhere down the road
 
 ---
 
-##Management of packages on the file system.
+## Management of packages on the file system.
 
 
 the npm strategy towards this is as follows:
@@ -146,7 +146,7 @@ then run the app. it would have polluted your global scope for now. but you can 
 
 after that, user can do `dungeon prune`, and all the remnants will be uninstalled as well, leaving no trace of the package installed, clearing all “pollution”.
 
-##making the installed packages available to userland code
+## making the installed packages available to userland code
 
 the node_modules structure is largely used by backend apps only running on node. but js land now uses node as a platform for building apps for the client as well.
 
@@ -182,7 +182,7 @@ the user can then specify a folder to place a symlink to that package in your pr
     	index.php
     ...php config files
 
-##different versions of packages
+## different versions of packages
 
 one solution that I thought of this is to simply not have any concept of different versions of packages by numbers. instead, different versions of the packages will be treated as different packages.
 
@@ -235,13 +235,13 @@ package awalGarg/sdm@2.0.0 mapped to sdm
 
 ---
 
-##managing placement of binaries
+## managing placement of binaries
 
 // this, I leave for erik royall to do later *evil laugh*
 
 ---
 
-##gitignore recommendations
+## gitignore recommendations
 
 this is also one topic of debate when using npm, bower, and all kinds of messy stuff. should we include package data in version control or not? and what about some config files.
 
@@ -251,7 +251,7 @@ the first part is difficult.
 
 remote dependencies could go down, but dungeon doesn’t store packages in the root folder. so whether you like it or not, you can’t include them in the version control directly. well, you can ofcourse, git traverses symlinks as well but it is not recommended.
 
-##what about packaging apps to give to a client?
+## what about packaging apps to give to a client?
 
 `dungeon package` to the rescue! the way dungeon package works is very generic. you can use it to write a new package as well…
 
